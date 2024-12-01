@@ -1,6 +1,6 @@
 import {expect, test, request, APIRequestContext} from "@playwright/test";
 
-let respNewContext2;
+let respNewContext2: APIRequestContext;
 test.beforeAll("Before block", async()=> {
     respNewContext2 = await request.newContext({baseURL: "https://restful-booker.herokuapp.com"})
 })

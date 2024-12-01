@@ -13,13 +13,13 @@ test('Login page test', async()=>{
     const uname = 'admin';
     const passw = 'admin';
     // const authToken = 'Bas ' + btoa(uname+':'+passw);
-    await page.setExtraHTTPHeaders({Authorization : createAuthheader(uname, passw)});
+    await page.setExtraHTTPHeaders({Authorization : createAuthHeader(uname, passw)});
    
     await page.goto('https://the-internet.herokuapp.com/basic_auth');
 
     browser.close();    
 });
 
-function createAuthheader(username: any, password: any)  {
+function createAuthHeader(username: any, password: any)  {
     return 'Basic ' + btoa(username+':'+password);
 }
